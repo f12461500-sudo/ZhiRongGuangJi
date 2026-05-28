@@ -1,0 +1,14 @@
+[theme]
+# 深色工业风主题
+base="dark"
+primaryColor="#00D4AA"
+backgroundColor="#0D1117"
+secondaryBackground="#161B22"
+textColor="#E6EDF3"
+font="sans serif"
+
+[server]
+maxUploadSize=10
+
+[browser]
+gatherUsageStats=false

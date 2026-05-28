@@ -32,14 +32,14 @@ DEMO_SCENARIOS = {
         "feed_rate": 12.0e-3,
     },
     "航天结构件精密加工 (TC4 宽幅扫描)": {
-        "description": "模拟宽幅激光扫描场景，扫描宽度达15mm。"
+        "description": "模拟宽幅激光扫描场景，扫描宽度达14mm。"
                        "传统方法在宽幅下不均匀性更加严重，优化效果尤为突出。",
         "material_name": "Ti-6Al-4V (TC4钛合金)",
         "path_type": "直线",
-        "laser_power": 600.0,
-        "beam_radius": 1.5e-3,
-        "scan_width": 15.0e-3,
-        "feed_rate": 6.0e-3,
+        "laser_power": 500.0,
+        "beam_radius": 0.8e-3,
+        "scan_width": 14.0e-3,
+        "feed_rate": 8.0e-3,
     },
 }
 
