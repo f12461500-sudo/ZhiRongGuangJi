@@ -520,6 +520,16 @@ def render_main(result, mode, metrics, elapsed):
 
     st.markdown("---")
 
+    # === 统一键名：热仿真模式补充energy模式的键 ===
+    if mode != "energy":
+        grid = result["grid"]
+        result["x_mm"] = np.linspace(0, (grid["nx"] - 1) * grid["dx"] * 1000, grid["nx"])
+        result["y_mm"] = np.linspace(0, (grid["ny"] - 1) * grid["dy"] * 1000, grid["ny"])
+        result["y_profile_before"] = result["surface_before"][grid["nx"] // 2, :]
+        result["y_profile_after"] = result["surface_after"][grid["nx"] // 2, :]
+        result["temp_before"] = result["surface_before"]
+        result["temp_after"] = result["surface_after"]
+
     # === 四个Tab ===
     tab1, tab2, tab3, tab4 = st.tabs([
         "  轨迹优化", "  功率优化", "  温度场详细对比", "  3D 可视化",
@@ -591,7 +601,7 @@ def render_main(result, mode, metrics, elapsed):
         )
         st.plotly_chart(fig, use_container_width=True)
 
-        show_optimization_summary(result, mode="energy")
+        show_optimization_summary(result, mode=mode)
 
     with tab4:
         st.markdown("### 三维温度场可视化")
